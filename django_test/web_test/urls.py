@@ -19,6 +19,11 @@ from web_test.views import index,login,list
 
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^web_test/', include('web_test.urls'))
+    #url(r'^admin/', admin.site.urls),
+    url(r'^index/', index),
+    url(r'^login/', login),
+    #url(r'^list/(\d*)', list),
+    url(r'^list/(?P<id>\d*)/(?P<name>\d*)/', list),
+    url(r'^list/(?P<name>\d*)/', list,{'id':222}),
+    
 ]
