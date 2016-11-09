@@ -15,7 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from web_test.views import index,login,list
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^index/', index),
+    url(r'^login/', login),
+    #url(r'^list/(\d*)', list),
+    url(r'^list/(?P<id>\d*)/(?P<name>\d*)/', list),
+    url(r'^list/(?P<name>\d*)/', list,{'id':222}),
 ]
