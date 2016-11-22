@@ -25,3 +25,16 @@ class User(models.Model):
     #建立Group和User表多对多的关系
     group_relation = models.ManyToManyField('Group')
     #一对一表关系OneToOneField
+    
+#自动设置时间
+
+class Asset(models.Model):
+    hostname = models.CharField(max_length=50)
+    create_date = models.DateTimeField(auto_now=True)
+    update_date = models.DateTimeField(auto_now=True)
+    
+    
+    
+    
+    
+    
