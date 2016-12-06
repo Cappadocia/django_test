@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from web_test.views import index,login,list
+from web_test.views import index,login,list,Add,Delete,Update,GET,AssetList
 
 
 urlpatterns = [
@@ -25,5 +25,10 @@ urlpatterns = [
     #url(r'^list/(\d*)', list),
     url(r'^list/(?P<id>\d*)/(?P<name>\d*)/', list),
     url(r'^list/(?P<name>\d*)/', list,{'id':222}),
+    url(r'^add/(?P<name>\d*)/$', Add),
+    url(r'^delete/(?P<name>\d*)/$', Delete),
+    url(r'^update/(?P<id>\d*)/(?P<hostname>\w*)/$', Update),
+    url(r'^get/(?P<hostname>\w*)/$', GET),
+    url(r'^assetlist/$', AssetList),
     
 ]
